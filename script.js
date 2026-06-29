@@ -18,6 +18,7 @@ function dragStart(e) {
   // release it
 
   e.dataTransfer.setData("text/plain", this.id);
+  console.log("dragStart");
 }
 
 function dragEnd() {
@@ -29,15 +30,19 @@ function dragOver(e) {
   // elements onto other elements.
 
   e.preventDefault();
+  console.log("dragOver");
 }
 
 function dragEnter(e) {
   e.preventDefault();
 
   this.classList.add("over");
+  console.log("dragEnter");
 }
+
 function dragLeave(e) {
   this.classList.remove("over");
+  console.log("dragLeave");
 }
 
 function dragDrop(e) {
@@ -48,4 +53,5 @@ function dragDrop(e) {
   this.appendChild(card);
 
   this.classList.remove("over");
+  console.log("dragDrop");
 }
